@@ -1,0 +1,517 @@
+$text-color: #d3d3d3;
+$header-color: #181b1c;
+$card-color: #24292b;
+$hover-color: #6aa0ff;
+$white: #efefef;
+$primary-font: "Anton", sans-serif;
+$secondary-font: "McLaren", cursive;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  max-height: 1000000px;
+  margin: 0;
+  padding: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  background: $header-color;
+}
+body {
+  margin: 0 20px;
+  // background: $header-color;
+  font-family: $secondary-font;
+}
+header {
+  display: flex;
+  height: 4.7rem;
+  align-items: center;
+  background: $header-color;
+  .logo {
+    flex: 30;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 4rem;
+    }
+  }
+  nav {
+    flex: 90;
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      // text-align: center;
+      li {
+        display: inline-block;
+        font-size: 1.7rem;
+        a {
+          display: inline-block;
+          font-family: $primary-font;
+          color: $text-color;
+          letter-spacing: 0.2rem;
+          padding: 17px;
+        }
+        &.active {
+          a {
+            color: $hover-color;
+            font-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .settings {
+    span {
+      i {
+        color: $text-color;
+        font-size: 1.7rem;
+        padding: 17px;
+      }
+    }
+  }
+}
+main {
+  background-color: $header-color;
+  .main_container {
+  }
+  .main_sidebar {
+    color: $text-color;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    // Sidebar button card >>
+    .sidebar-item {
+      // sidebar button >>
+      .sidebar__btn {
+        background: $card-color;
+        border-radius: 0.43rem;
+        padding: 0.1rem;
+        margin: 0.3rem;
+        text-align: center;
+        justify-content: center;
+        // Button icon >>
+        i {
+          color: $hover-color;
+          font-size: 3rem;
+          padding: 0 0.875rem;
+          padding-top: 0.2rem;
+
+          .active {
+            color: pink;
+          }
+        }
+        // Buton title >>
+        .sidebar__btn-title {
+          color: $text-color;
+          font-family: $primary-font;
+          font-size: 1.7rem;
+          letter-spacing: 0.2rem;
+        }
+      }
+    }
+
+    // Sidebar Message / welcomes / alerts / updates
+    .sidebar__message {
+      background: $card-color;
+      border-radius: 0.43rem;
+      padding: 0.5rem;
+      margin: 0.313rem;
+      text-align: center;
+      justify-content: center;
+      // Button icon >>
+
+      h4 {
+        color: orangered;
+        font-size: 1.7rem;
+        font-family: $primary-font;
+        letter-spacing: 0.2rem;
+      }
+      .m-close-container {
+        position: relative;
+        m {
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: $header-color;
+
+          &:hover {
+            color: $text-color;
+          }
+        }
+      }
+      .sidebar__message--text {
+        color: $text-color;
+        padding: 0.5rem;
+      }
+    }
+
+    // END OF MESSAGES
+
+    // START OF INPUT FEILD SEARCH
+
+    .formSearch {
+      background: $card-color;
+      border-radius: 0.43rem;
+      padding: 0.5rem;
+      margin: 0.313rem;
+      text-align: center;
+      justify-content: center;
+
+      overflow: hidden;
+      position: relative;
+
+      & .col {
+        float: left;
+        width: 20%;
+        justify-content: center;
+
+        button {
+          background: $card-color;
+          padding: 0.5rem;
+          color: $text-color;
+          border-radius: 0.43rem;
+          border: 1px solid $header-color;
+        }
+        &.big {
+          width: 80%;
+        }
+      }
+
+      label {
+        color: $text-color;
+        font-family: $primary-font;
+        font-size: 1.7rem;
+        letter-spacing: 0.2rem;
+        margin-bottom: 0.313rem;
+      }
+    }
+  }
+  .main_body__container {
+    background-color: $card-color;
+
+    .ezflow__search--col {
+      background-color: $white;
+      border-radius: 0.2rem;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      .search__result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $header-color;
+        border-radius: 0.2rem;
+        padding: 0.1rem;
+        margin: 0.2rem;
+
+        i {
+          flex-basis: 10%;
+          text-align: center;
+          font-size: 1em;
+          color: $hover-color;
+        }
+        a {
+          flex-basis: 10%;
+          font-family: $primary-font;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: $hover-color;
+        }
+        p {
+          flex-basis: 80%;
+          text-align: center;
+          margin: 0px;
+          color: $text-color;
+        }
+      }
+    }
+    .ezflow__song--col {
+    }
+  }
+}
+
+//
+
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 
+general 
+-------
+*/
+body {
+  background: #e3e9ff;
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  font: 300 16px/1.5 "Roboto", sans-serif;
+  transition: border 0.3s linear;
+}
+
+input[type="text"]:focus {
+  border-color: #4ac7be;
+  outline: none;
+}
+
+.btn-primary {
+  background: #4ac7be;
+  border: none;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  font: 300 16px/1.5 "Roboto", sans-serif;
+  transition: background 0.3s linear;
+}
+
+.btn-primary:hover {
+  background: #097fb7;
+}
+
+.btn-primary:focus {
+  outline: none;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  display: inline-block;
+  vertical-align: top;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s linear, color 0.3s linear;
+}
+
+.btn-icon:focus {
+  outline: none;
+}
+
+.btn-icon:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.btn-icon.remove:before {
+  content: "\f2ed";
+}
+
+.btn-icon.down:before {
+  content: "\f063";
+}
+
+.btn-icon.up:before {
+  content: "\f062";
+}
+
+/* 
+todo block 
+----------
+*/
+.todoBlock {
+  padding: 30px;
+  margin: 30px 0;
+  background: #fff;
+  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.todoBlock .titleHolder {
+  margin: 0 0 30px;
+}
+
+/* 
+list holder
+-----------
+*/
+.listHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+}
+
+.listHolder li:before {
+  content: counter(step-counter);
+  background: #4ac7be;
+  color: #fff;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.listHolder .listName {
+  float: left;
+}
+
+.listHolder .btn-icon {
+  float: right;
+  margin: 0 0 0 20px;
+}
+
+/* 
+form holder
+-----------
+*/
+.formHolder {
+  margin: 0 -5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.formHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.formHolder .col.big {
+  width: 60%;
+}
