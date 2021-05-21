@@ -4,135 +4,219 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=McLaren&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./src/scss/main.scss">
-    <script defer src="./src/js/main.js">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=McLaren&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+    <script defer src="./src/js/controller.js"></script>
     <title>eZFlow Rhymers App</title>
-
   </head>
-<body>
-  <header>
-    <div class="logo">
-      <img src="https://i.imgur.com/Nei5qs3.png" alt="Logo">
-    </div>
-    <nav>
-      <ul>
-        <li class="active"><a href="#">HOME</a></li>
-        <li><a href="#">GUIDE</a></li>
-        <li><a href="#">FAQ's</a></li>
-        <li><a href="#">UPDATES</a></li>
-      </ul>
-    </nav>
-    <div class="settings">
-      <span><i class="fas fa-sliders-h"></i></span>
-      <span><i class="fas fa-cog"></i></span>
-    </div>
-  </header>
-  <main>
-    <div class="container-fluid">
-      <div class="row main_container">
-        <div class="col-3 main_sidebar">
 
-          <div class="sidebar-item">
-            <div class="sidebar__btn">
-              <i class="fas fa-plus-square"></i>
-              <div class="sidebar__btn-title">ADD</div>
-            </div>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="https://i.imgur.com/Nei5qs3.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><a href="#">HOME</a></li>
+          <li><a href="#">GUIDE</a></li>
+          <li><a href="#">FAQ's</a></li>
+          <li><a href="#">UPDATES</a></li>
+        </ul>
+      </nav>
+      <div class="settings">
+        <span><i class="fas fa-sliders-h"></i></span>
+        <span><i class="fas fa-cog"></i></span>
+      </div>
+    </header>
+    <main>
+      <div class="grid-container">
+        <div class="mgi grid-item grid-item-1"></div>
+
+        <div class="mgi grid-item grid-item-2">
+          <!-- <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1">flexbox-item-1</div>
+            <i class="fas fa-plus-circle"></i>
+            <i class="fas fa-minus-circle"></i>
           </div>
-          <div class="sidebar-item">
-            <div class="sidebar__btn">
-              <i class="fas fa-file-archive"></i>
-              <div class="sidebar__btn-title">EXPORT</div>
-            </div>
+          <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1">flexbox-item-1</div>
+            <i class="fas fa-plus-circle"></i>
+            <i class="fas fa-minus-circle"></i>
           </div>
-          <div class="sidebar-item">
-            <div class="sidebar__btn">
-              <i class="fas fa-brain"></i>
-              <div class="sidebar__btn-title">BRAIN</div>
-            </div>
+          <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1">flexbox-item-1</div>
+            <i class="fas fa-plus-circle"></i>
+            <i class="fas fa-minus-circle"></i>
           </div>
-          <div class="sidebar-item">
-            <div class="sidebar__btn">
-              <i class="fas fa-pen-square"></i>
-              <div class="sidebar__btn-title">EDIT</div>
-            </div>
+          <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1">flexbox-item-1</div>
+            <i class="fas fa-plus-circle"></i>
+            <i class="fas fa-minus-circle"></i>
           </div>
-          <!-- End of icon buttons -->
+          <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1">flexbox-item-1</div>
+            <i class="fas fa-plus-circle"></i>
+            <i class="fas fa-minus-circle"></i>
+          </div> -->
+        </div>
 
-          <div class="sidebar__message">
-            <div class="m-close-container">
-              <m class="fas fa-times-circle" id="m-close"></m>
-            </div>
+        <div class="mgi grid-item grid-item-3"></div>
+        <img class="grid-item-4" src="https://i.imgur.com/Nei5qs3.png" alt="logo" />
+        <div class="mgi grid-item grid-item-search">
+          <!--         Search Rhymes            -->
+          <form class="search-container search">
+            <input class="search-input search__field" placeholder="Search Rhymes..." type="text" />
+            <button class="searchRhymes" type="submit"></button>
+          </form>
+        </div>
+        <img class="grid-item-6" src="https://i.imgur.com/Nei5qs3.png" alt="logo" />
 
-            <h4>Welcome</h4>
-            <p class="sidebar__message--text">Welcome rappers to your eZFlow lyric book.<br>Store your rhymes and make writing easier!</p>
-            <p class="sidebar__message--text">This is where you will see Updates/Messages.</p>
-          </div>
-
-          <div class="formSearch">
-
-            <label for="search-input">Search Rhymes</label>
-
-            <div class="col big">
-              <input id="search-input" type="text" placeholder="search...">
-            </div>
-            <div class="col">
-              <button type="button" id="rhymeSearchBtn" class="btn-primary">Search</button>
-            </div>
+        <div class="mgi grid-item grid-item-7"></div>
+        <div class="mgi grid-item grid-item-8">
+          <div class="flexbox-container results-container">
+            <!-- <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div>
+            <div class="flexbox-item results-item">flexbox-item-2</div> -->
           </div>
         </div>
 
-        <div class="col-9 main_body__container">
-          <div class="row">
-            <div class="col-12 col-md-7 ezflow__search--col">
+        <div class="mgi grid-item grid-item-9"></div>
+      </div>
+      <!-- <div class="container-fluid">
+        <div class="row main_container">
+          <div class="col-3 main_sidebar">
+            <div class="sidebar-item">
+              <div class="sidebar__btn">
+                <i class="fas fa-plus-square"></i>
+                <div class="sidebar__btn-title">ADD</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar__btn">
+                <i class="fas fa-file-archive"></i>
+                <div class="sidebar__btn-title">EXPORT</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar__btn">
+                <i class="fas fa-brain"></i>
+                <div class="sidebar__btn-title">BRAIN</div>
+              </div>
+            </div>
+            <div class="sidebar-item">
+              <div class="sidebar__btn">
+                <i class="fas fa-pen-square"></i>
+                <div class="sidebar__btn-title">EDIT</div>
+              </div>
+            </div>
+       
 
-              <div class="container">
-                <div class="todoBlock">
-                  <!-- main title holder -->
-                  <div class="titleHolder">
-                    <p>Start sorting your lyrics, try different arrangements then save when you are done!</p>
-                  </div>
-                  <!-- todo list -->
-                  <div class="todoList">
-                    <!-- list holder -->
-                    <div class="listHolder">
-                      <ul class="list">
-                        <li>
-                          <span class="listName">I know i am old, big and bold</span>
-                          <!-- 
-              <button class="btn-icon remove"></button>
-              <button class="btn-icon down"></button>
-              <button class="btn-icon up"></button>
-              -->
-                        </li>
-                        <li>
-                          <span class="listName">I know i am old, big and bold</span>
-                        </li>
-                        <li>
-                          <span class="listName">I know i am old, big and bold</span>
-                        </li>
-                        <li>
-                          <span class="listName">I know i am old, big and bold</span>
-                        </li>
-                        <li>
-                          <span class="listName">I know i am old, big and bold</span>
-                        </li>
-                      </ul>
+            <div class="sidebar__message">
+              <div class="m-close-container">
+                <m class="fas fa-times-circle" id="m-close"></m>
+              </div>
+
+              <h4>Welcome</h4>
+              <p class="sidebar__message--text">Welcome rappers to your eZFlow lyric book.<br />Store your rhymes and make writing easier!</p>
+              <p class="sidebar__message--text">This is where you will see Updates/Messages.</p>
+            </div>
+
+            <div class="formSearch">
+              <label for="search-input">Search Rhymes</label>
+
+              <div class="col big">
+                <input id="search-input" type="text" placeholder="search..." />
+              </div>
+              <div class="col">
+                <button type="button" id="rhymeSearchBtn" class="btn-primary">Search</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-9 main_body__container">
+            <div class="row">
+              <div class="col-12 col-md-7 ezflow__search--col">
+                <div class="container">
+                  <div class="todoBlock">
+                    
+                    <div class="titleHolder">
+                      <p>Start sorting your lyrics, try different arrangements then save when you are done!</p>
                     </div>
-                    <!-- form holder -->
-                    <div class="formHolder">
-                      <div class="col big">
-                        <input type="text" id="addInput">
+                
+                    <div class="todoList">
+                    
+                      <div class="listHolder">
+                        <ul class="list">
+                          <li>
+                            <span class="listName">I know i am old, big and bold</span>
+
+                            <button class="btn-icon remove"></button>
+                            <button class="btn-icon down"></button>
+                            <button class="btn-icon up"></button>
+                          </li>
+                          <li>
+                            <span class="listName">I know i am old, big and bold</span>
+                          </li>
+                          <li>
+                            <span class="listName">I know i am old, big and bold</span>
+                          </li>
+                          <li>
+                            <span class="listName">I know i am old, big and bold</span>
+                          </li>
+                          <li>
+                            <span class="listName">I know i am old, big and bold</span>
+                          </li>
+                        </ul>
                       </div>
-                      <div class="col">
-                        <button type="button" id="addBtn" class="btn-primary">Add Item</button>
-                      </div>
-                      <div class="col">
-                        <button type="button" id="toggleBtn" class="btn-primary">Hide List</button>
+
+                      <div class="formHolder">
+                        <div class="col big">
+                          <input type="text" id="addInput" />
+                        </div>
+                        <div class="col">
+                          <button type="button" id="addBtn" class="btn-primary">Add Item</button>
+                        </div>
+                        <div class="col">
+                          <button type="button" id="toggleBtn" class="btn-primary">Hide List</button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -140,11 +224,8 @@
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-
-    </div>
-  </main>
-</body>
+      </div> -->
+    </main>
+  </body>
 </html>

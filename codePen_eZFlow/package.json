@@ -1,0 +1,20 @@
+{
+  "name": "codepen_ezflow",
+  "version": "1.0.0",
+  "description": "rhyme application",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "ben mccarthy",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.11.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-nightly.676",
+    "parcel": "^2.0.0-nightly.447",
+    "sass": "^1.32.11"
+  }
+}
