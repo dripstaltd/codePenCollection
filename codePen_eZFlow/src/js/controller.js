@@ -3,6 +3,10 @@ import * as model from './model.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
+const btnAddPairs = document.querySelector('#add__rhyme--pairs');
+const btnAddLyrics = document.querySelector('#add__lyrics');
+const btnSearchLib = document.querySelector('#search__library');
+const btnSearchWords = document.querySelector('#searchWords');
 const resultData = [];
 const inputWord = '';
 
@@ -24,6 +28,7 @@ const controlRhymes = async function () {
     if (!query) throw new Error();
     resultsContainer.innerHTML = '';
     await model.loadSearchResults(query);
+    inputWord = query;
   } catch (err) {
     console.error(`${err.message} No Query found`);
   }
@@ -33,17 +38,13 @@ const controlRhymes = async function () {
 const init = function () {
   btn.addEventListener('click', function (e) {
     e.preventDefault();
-
     controlRhymes();
   });
+  btnSearchLib.addEventListener('click', function (e) {});
   // console.log(model.rawResult);
-
-  console.log();
 };
 ////////////////////////////////////////////////
-const y = new model.State('inputWord', ['resultData', 'resultData']);
-const x = new model.State('inpudtWord', ['resultsData', 'resulatData']);
-console.log(x);
+
 init();
 ////////////////////////////////////////////////
 

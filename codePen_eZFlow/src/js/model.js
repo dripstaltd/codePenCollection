@@ -1,5 +1,65 @@
 import { AJAX } from './helpers.js';
-import { API_URL } from './config.js';
+import { API_URL, API_LIB } from './config.js';
+
+const btnAddPairs = document.querySelector('#add__rhyme--pairs');
+const btnAddLyrics = document.querySelector('#add__lyrics');
+const btnSearchLib = document.querySelector('#search__library');
+const btnSearchWords = document.querySelector('#searchWords');
+const resultsContainer = document.querySelector('.results-container');
+
+///////////////////////////////////////
+
+// export function isActive(btn) {
+//   if (btn.classList.contains('active') ? activeState == true : activeState == false) return activeState;
+// }
+
+const createLibObject = function (lib) {
+  for (rhymeObject of lib) {
+    const _markup = `
+          <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1">${rhymeObject.rhymeString}</div>
+            <i class="fas fa-plus-circle"></i>
+            <i class="fas fa-minus-circle"></i>
+          </div>`;
+    _parentElement = document.querySelector('.grid-item-2');
+    _parentElement.insertAdjacentHTML('beforeend', _markup);
+  }
+};
+
+export const LibData = async function () {
+  try {
+    const data = await AJAX(`${API_LIB}`);
+    if (!data) throw new Error('😇LIBRARY DATA RES FAILED');
+    createLibObject(data);
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+///////////////////////////////////
+
+export const btnState = (btn, active = false) => {
+  if (active === false) {
+    btn.classList.remove('list__item--active');
+    return console.log(`${btn.id} status: ${active}`);
+  } else {
+    btn.classList.add('list__item--active');
+    return console.log(`${btn.id} status: ${active}`);
+  }
+};
+
+btnSearchLib.addEventListener('click', () => {
+  btnState(btnSearchWords);
+  btnState(btnSearchLib, true);
+  LibData();
+});
+
+btnSearchWords.addEventListener('click', () => {
+  btnState(btnSearchWords, true);
+  btnState(btnSearchLib);
+});
+///////////////////////////////////////
 
 export class State {
   constructor(word, rhymesWith, rhymeString = []) {

@@ -44,7 +44,11 @@
     </header>
     <main>
       <div class="grid-container">
-        <div class="mgi grid-item grid-item-1"></div>
+        <div class="mgi grid-item grid-item-1">
+          <div class="flexbox-container">
+            <div class="flexbox-item flexbox-item-1"></div>
+          </div>
+        </div>
 
         <div class="mgi grid-item grid-item-2">
           <!-- <div class="flexbox-container">
@@ -79,6 +83,14 @@
         <div class="mgi grid-item grid-item-search">
           <!--         Search Rhymes            -->
           <form class="search-container search">
+            <nav class="nav nav--options">
+              <ul class="nav__list--options">
+                <li class="btn list__item" id="add__rhyme--pairs"><i class="fas fa-plus-circle"></i> Rhyme Pairs</li>
+                <li class="btn list__item" id="add__lyrics"><i class="fas fa-plus-circle"></i> Lyrics</li>
+                <li class="btn list__item" id="search__library"><i class="fas fa-search-plus"></i> Library</li>
+                <li class="btn list__item list__item--active" id="searchWords"><i class="fas fa-search-plus"></i> New Words</li>
+              </ul>
+            </nav>
             <input class="search-input search__field" placeholder="Search Rhymes..." type="text" />
             <button class="searchRhymes" type="submit"></button>
           </form>
