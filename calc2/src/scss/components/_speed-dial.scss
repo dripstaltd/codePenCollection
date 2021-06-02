@@ -1,0 +1,308 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --gray: #464646;
+  --gray-light: #ddd;
+}
+
+$box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%small-option {
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.speed-dial {
+  $self: &;
+  position: fixed;
+  z-index: 999;
+  transition: bottom 0.4s ease;
+
+  button {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    // border-radius: 50%;
+  }
+
+  &__modal {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+  }
+
+  &:hover {
+    [data-direction] {
+      visibility: visible;
+    }
+
+    .item {
+      @extend %flex-center;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .speed-dial__button--root {
+      @extend %flex-center;
+    }
+
+    ~ .speed-dial__modal {
+      visibility: visible;
+      opacity: 1;
+      background: rgba(209, 209, 209, 0.5);
+
+      &:before {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "modal ⚡";
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  [data-direction] {
+    position: absolute;
+    display: flex;
+    visibility: hidden;
+  }
+
+  [data-direction="top"] {
+    bottom: 56px;
+    width: 56px;
+    flex-direction: column;
+
+    .speed-dial__button--small {
+      @extend %flex-center;
+      // margin-bottom: 15px;
+
+      > div {
+        @extend %small-option;
+      }
+    }
+  }
+
+  [data-direction="bottom"] {
+    top: 56px;
+    width: 56px;
+    flex-direction: column-reverse;
+
+    .speed-dial__button--small {
+      @extend %flex-center;
+      margin-top: 15px;
+
+      > div {
+        @extend %small-option;
+      }
+    }
+  }
+
+  [data-direction="left"] {
+    top: 0;
+    right: 56px;
+    height: 56px;
+    flex-direction: row;
+
+    .speed-dial__button--small {
+      @extend %flex-center;
+      margin-right: 15px;
+
+      > div {
+        @extend %small-option;
+      }
+    }
+  }
+
+  [data-direction="right"] {
+    top: 0;
+    left: 56px;
+    height: 56px;
+    flex-direction: row-reverse;
+
+    .speed-dial__button--small {
+      @extend %flex-center;
+      margin-left: 15px;
+
+      > div {
+        @extend %small-option;
+      }
+    }
+  }
+
+  .icon {
+    transition: all 100ms ease-in-out;
+    width: 25px;
+    height: 25px;
+
+    &__plus {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  .item {
+    @extend %flex-center;
+    position: relative;
+    transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, opacity 0.8s;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .speed-dial__button--small {
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      > div {
+        opacity: 0.5;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    padding: 5px;
+    color: var(--white);
+    font-size: 11px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+  .speed-dial__button--root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    border-radius: 50%;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      transform: rotate(45deg);
+
+      > svg {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.margin-bottom {
+    bottom: 76px;
+  }
+}
+
+.speed-dial-active {
+  [data-direction] {
+    visibility: visible;
+
+    .item {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .button-root {
+    transform: rotate(45deg);
+  }
+}
+
+.speed-dial__top {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  opacity: 0;
+  bottom: 10px;
+  z-index: 9;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &.show {
+    opacity: 1;
+  }
+
+  .icon__top {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    svg {
+      position: absolute;
+      box-sizing: border-box;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .top-container {
+    display: flex;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: filter 400ms ease-in-out;
+    margin: auto;
+    cursor: pointer;
+    align-items: center;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.speed-dial,
+.speed-dial__top {
+  svg {
+    pointer-events: none;
+  }
+}
+
+.android-settings {
+  color: black;
+}
