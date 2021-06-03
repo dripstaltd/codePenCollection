@@ -13,19 +13,54 @@
       integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- Header and footer -->
     <nav class="row between-xs gran">
-      <a href="#" class="col-xs-2 ion-calculator active"></a>
-      <a href="#" class="col-xs-2 ion-clipboard"></a>
-      <a href="#" class="col-xs-2 ion-android-settings"></a>
+      <a href="#calculator" class="col-xs-2 ion-calculator active"></a>
+      <a href="#clipboard" class="col-xs-2 ion-clipboard"></a>
+      <a href="#android-settings" class="col-xs-2 ion-android-settings"></a>
     </nav>
-    <div class="mum pagesContainer">
-      <div class="page" id="welcome"><h2>WELCOME PAGE</h2></div>
-      <div class="page" id="calculator"><h2>CALCULATOR PAGE</h2></div>
-      <div class="page" id="clipboard"><h2>CLIPBOARD PAGE</h2></div>
-      <div class="page" id="android-settings"><h2>SETTINGS PAGE</h2></div>
+
+    <div class="mum mainContainer">
+      <div class="page">
+        <div class="welcome">
+          <h1 class="page__title">N.E.L</h1>
+          <p class="page__description--short">Nicotine Efficiency Calculator</p>
+        </div>
+        <section class="uses gran">
+          <h3 class="page__subtitle">Uses</h3>
+          <ul class="uses__list">
+            <li class="uses__list--item">- Track the amount of nicotine you are consuming</li>
+            <li class="uses__list--item">- Using something new? Check the N.E.L Score</li>
+            <li class="uses__list--item">- Adjust your nicotine, with the help of suggested changes</li>
+            <li class="uses__list--item"></li>
+          </ul>
+        </section>
+
+        <section class="supported-nicotine gran">
+          <h3 class="page__subtitle">Supported Nicotine</h3>
+          <p>
+            Below are the current supported nicotine products, this app is in early stages, so if there is a product missing or you would like added
+            then please contact me via ... I will be adding a feature for users to add their own products very soon!
+          </p>
+          <ul class="supported-nicotine__list row around-xs">
+            <li class="supported-nicotine__list--item">Vapes</li>
+            <li class="supported-nicotine__list--item">Orals</li>
+            <li class="supported-nicotine__list--item">Patches</li>
+            <li class="supported-nicotine__list--item">Sprays</li>
+            <li class="supported-nicotine__list--item">View Full List</li>
+          </ul>
+        </section>
+        <section class="gran walkthrough">
+          <h3 class="page__subtitle">Common Mistakes</h3>
+          <p>If you would like further assistance using this app, click walkthrough or watch the example below.</p>
+        </section>
+      </div>
     </div>
   </body>
 </html>

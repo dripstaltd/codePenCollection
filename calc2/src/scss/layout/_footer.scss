@@ -14,6 +14,8 @@ nav {
   grid-area: header;
   box-shadow: var(--box-shadow);
   width: 100vw;
+  height: 8vh;
+  align-content: center;
 
   a {
     border-radius: $b-radius;
