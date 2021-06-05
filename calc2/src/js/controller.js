@@ -1,17 +1,58 @@
 'using strict';
+import * as model from './model.js';
+import calcView from './views/calcView.js';
+import clipView from './views/clipView.js';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import settingsView from './views/settingsView.js';
+//////////////////////////////////////////////////////////
+const patchStrength = document.querySelector('#patch-strength');
+const calcForm = document.querySelector('#calculator-form');
+const allInputs = document.querySelectorAll('input');
+//////////////////////////////////////////////////////////
+// Calculator page nicotine options
+const btnPatch = document.querySelector('#option--patch');
+const btnOral = document.querySelector('#option--oral');
+const btnVape = document.querySelector('#option--vape');
+const btnSpray = document.querySelector('#option--spray');
+//////////////////////////////////////////////////////////
+const strengthLabel = document.getElementById('strength--label');
+const page = document.querySelector('.page');
+const mCol = document.querySelector('.mainContainer');
+const timeLabel = document.getElementById('time--label');
 
-const State = {
-  pages: ['welcome', 'calculator', 'clipboard', 'settings'],
-  currentPage: 'welcome',
-};
+const priceLabel = document.querySelector('#price--label');
 
-class SubmitData {
-  constructor(strength, time, size) {
-    this.strength = strength;
-    this.time = time;
-    this.size = size;
+const boxQuantityLabel = document.querySelector('#box-quantity--label');
+
+//////////////////////////////////////////////////////////
+
+const strengthHandler = function () {
+  const strengthCus = document.getElementById('custom--strength').value;
+  const e = document.getElementById('drop--strength');
+  const vS = e[e.selectedIndex].value;
+  let result;
+  if (strengthCus === 0 || strengthCus === '0') {
+    result = +vS;
+    return result;
+  } else {
+    result = +strengthCus;
+    return result;
   }
-}
+};
+const timeHandler = function () {
+  const x = document.getElementById('custom--time').value;
+  const e = document.getElementById('drop--time');
+  const vT = e[e.selectedIndex].value;
+  let result;
+  if (x === 0 || x === '0') {
+    result = +vT;
+    return result;
+  } else {
+    result = +x;
+    return result;
+  }
+};
 
 // Select all the anchor tags
 let links = document.querySelectorAll('a');
@@ -32,45 +73,37 @@ links.forEach((link) => {
   });
 });
 
-const markupCalc = `
-    <div class="page">
-      <h2 class="page__title">N.E.L Calculator</h2>
-      <p class="page__description--short">
-        User guide infomation
-      </p>
-    </div>
-`;
-
-const markupClip = `
-    <div class="page">
-      <h2 class="page__title">Clipboard</h2>
-      <p class="page__description--short">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolorum fuga optio voluptatum in delectus consequatur maxime ipsum culpa officia.
-      </p>
-    </div>
-`;
-
-const markupSettings = `
-    <div class="page">
-      <h2 class="page__title">Settings</h2>
-      <p class="page__description--short">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque dolorum fuga optio voluptatum in delectus consequatur maxime ipsum culpa officia.
-      </p>
-    </div>
-`;
+const controlCalculator = async function () {
+  try {
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 
 // Changing page
 window.addEventListener('hashchange', function () {
   // get current hash
   const curHash = location.hash;
   // render page by id === current hash
-  if (curHash === '#calculator') pageHandler(markupCalc, 'calulator');
-  if (curHash === '#clipboard') pageHandler(markupClip, 'clipboard');
-  if (curHash === '#android-settings') pageHandler(markupSettings, 'settings');
+  if (curHash === '#calculator') calcView.loadPage();
+  if (curHash === '#clipboard') clipView.loadPage();
+  if (curHash === '#android-settings') settingsView.loadPage();
 });
 
-const pageHandler = function (markup, setPage) {
-  pageContainer.innerHTML = markup;
-  State.currentPage = setPage;
-  console.log(State.currentPage);
+document.addEventListener('submit', function (e) {
+  e.preventDefault();
+  console.log('form submit check');
+
+  const data = {
+    strength: strengthHandler(),
+    time: timeHandler(),
+    price: +document.querySelector('#price--input').value,
+    quantity: +document.querySelector('#box-quantity--input').value,
+  };
+  mCol.insertAdjacentHTML('afterbegin', model.renderResults(data));
+});
+
+const init = function () {
+  controlCalculator();
 };
+init();

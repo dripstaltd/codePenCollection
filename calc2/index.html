@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>eZFlow</title>
+    <title>nel</title>
     <link rel="stylesheet" href="./src/scss/main.scss" />
     <script defer src="./src/js/controller.js"></script>
     <link
@@ -19,20 +19,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <!-- Header and footer -->
-    <nav class="row between-xs gran">
+    <!-- Nav -->
+    <nav class="row between-xs navigation">
       <a href="#calculator" class="col-xs-2 ion-calculator active"></a>
       <a href="#clipboard" class="col-xs-2 ion-clipboard"></a>
       <a href="#android-settings" class="col-xs-2 ion-android-settings"></a>
     </nav>
 
-    <div class="mum mainContainer">
+    <div class="mainContainer">
       <div class="page">
         <div class="welcome">
           <h1 class="page__title">N.E.L</h1>
           <p class="page__description--short">Nicotine Efficiency Calculator</p>
         </div>
-        <section class="uses gran">
+        <!-- <section class="uses">
           <h3 class="page__subtitle">Uses</h3>
           <ul class="uses__list">
             <li class="uses__list--item">- Track the amount of nicotine you are consuming</li>
@@ -42,7 +42,7 @@
           </ul>
         </section>
 
-        <section class="supported-nicotine gran">
+        <section class="supported-nicotine">
           <h3 class="page__subtitle">Supported Nicotine</h3>
           <p>
             Below are the current supported nicotine products, this app is in early stages, so if there is a product missing or you would like added
@@ -55,11 +55,45 @@
             <li class="supported-nicotine__list--item">Sprays</li>
             <li class="supported-nicotine__list--item">View Full List</li>
           </ul>
-        </section>
-        <section class="gran walkthrough">
-          <h3 class="page__subtitle">Common Mistakes</h3>
-          <p>If you would like further assistance using this app, click walkthrough or watch the example below.</p>
-        </section>
+        </section> -->
+        <!-- <form class="wrapper calculator">
+          <div class="container-fluid calculator__container">
+            <ul class="row calculator__container--row">
+              <li class="btn-products">Patches</li>
+              <li class="btn-products">Oral</li>
+              <li class="btn-products">Vapes</li>
+              <li class="btn-products">sprays</li>
+            </ul>
+            <p class="question-label">Patch Strength?</p>
+            <div class="row calculator__container--row">
+              <input class="col-xs-6 calculator__container--col" type="text" placeholder="Custom.." />
+
+              <select name="patch-strength" id="patch-strength">
+                <option value="">7mg</option>
+                <option value="">14mg</option>
+                <option value="">21mg</option>
+              </select>
+            </div>
+            <p class="question-label">Usage</p>
+            <div class="row calculator__container--row">
+              <input class="col-xs-6 calculator__container--col" type="text" placeholder="Quantity" />
+
+              <select name="patch-quantity" id="patch-quantity">
+                <option value="">Per Week</option>
+                <option value="">Per Day</option>
+                <option value="">Per Month</option>
+              </select>
+            </div>
+
+            <p class="question-label">Price per box?</p>
+            <div class="row calculator__container--row">
+              <input class="calculator__container--col" type="text" placeholder="£" />
+              <p class="question-label">How many in a box?</p>
+              <input type="text" />
+              <button class="btn btn-primary" href="#">Calculate</button>
+            </div>
+          </div>
+        </form> -->
       </div>
     </div>
   </body>

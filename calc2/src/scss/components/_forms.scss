@@ -1,0 +1,19 @@
+input {
+  text-align: center;
+  width: 82vw;
+  height: 6vh;
+  background-color: $color-white;
+  border-radius: $b-radius;
+  outline: none;
+  border-style: none;
+  margin: 1rem;
+  font-family: $font-primary;
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    text-align: center;
+    color: $color-grey;
+  }
+}

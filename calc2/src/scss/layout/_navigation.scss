@@ -1,0 +1,40 @@
+/* core styles */
+nav {
+  background-color: white;
+  display: flex;
+  grid-area: header;
+  box-shadow: $box-shadow;
+  width: 100vw;
+  height: 8vh;
+  align-content: center;
+  background-color: $color-black;
+
+  a {
+    border-radius: $b-radius;
+    color: $color-white;
+    text-align: center;
+    font-size: 3rem;
+    padding: 0.5rem 0;
+    width: 20%;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: $color-white;
+  }
+
+  a:focus {
+    color: $color-green;
+  }
+
+  .active {
+    color: $color-green;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
