@@ -100,6 +100,7 @@ document.addEventListener('submit', function (e) {
     price: +document.querySelector('#price--input').value,
     quantity: +document.querySelector('#box-quantity--input').value,
   };
+
   mCol.insertAdjacentHTML('afterbegin', model.renderResults(data));
 });
 

@@ -6,11 +6,6 @@ export const nel = {
   strength: 0, //mg
   time: 7, //days
   wattage: 0, //wattage
-
-  nelSum() {
-    const newScore = (this.strength * this.wattage) / this.time;
-    return console.log(newScore);
-  },
 };
 
 export const inputHandler = function (drop, cus) {
@@ -22,10 +17,10 @@ export const inputHandler = function (drop, cus) {
 };
 
 export const renderResults = function (data) {
-  console.log(data);
+  let nel = calcPatch(data.strength, data.time);
   const markup = `
         <div class="results-container container-fluid" id="results-data">
-          <h2>Results</h2>
+          <span><h2>Results</h2><p>${nel}</p></span>
           <p >Patch Strength: ${data.strength}<br>
             Time: ${data.time}<br>
           Price: ${data.price}
@@ -34,4 +29,9 @@ export const renderResults = function (data) {
       `;
   if (!data) return console.error('error, no data');
   return markup;
+};
+
+export const calcPatch = (strength, time) => {
+  let sum = strength / time;
+  return sum;
 };
