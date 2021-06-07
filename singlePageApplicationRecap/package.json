@@ -1,0 +1,23 @@
+{
+  "name": "singlePageApplicationRecap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "sparcel": "parcel index.html",
+    "snode": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.11.0",
+    "express": "^4.17.1",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-nightly.676",
+    "parcel": "^2.0.0-nightly.447",
+    "sass": "^1.32.11"
+  }
+}
