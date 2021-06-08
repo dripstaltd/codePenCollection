@@ -80,15 +80,21 @@ const controlCalculator = async function () {
   }
 };
 
-// Changing page
-window.addEventListener('hashchange', function () {
+// Changing page functionality
+const hashFunction = () => {
   // get current hash
   const curHash = location.hash;
   // render page by id === current hash
-  if (curHash === '#calculator') calcView.loadPage();
+  let y = document.getElementById('calculator__page');
+  if (curHash === '#calculator') y.classList.remove('hidden');
   if (curHash === '#clipboard') clipView.loadPage();
   if (curHash === '#android-settings') settingsView.loadPage();
-});
+};
+
+// With hash change
+window.addEventListener('hashchange', hashFunction);
+// with page load TODO: array [hashchange, load] combine
+window.addEventListener('load', hashFunction);
 
 document.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -106,5 +112,6 @@ document.addEventListener('submit', function (e) {
 
 const init = function () {
   controlCalculator();
+  model.calcPage();
 };
 init();
