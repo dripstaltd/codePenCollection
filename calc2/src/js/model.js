@@ -44,16 +44,3 @@ export const calcPage = () => {
     location.reload();
   });
 };
-
-// BUG- this doesnt work
-export const toggleDisplay = function (x) {
-  console.log(x);
-  const y = document.getElementById(`${x}`);
-  console.log(y);
-  const z = ['calculator-page', 'clipboard', 'settings'];
-  // setting display of the other pages to none
-  y.style.display = 'block';
-  for (pages of z !== x) {
-    pages.style.display = 'none';
-  }
-};
